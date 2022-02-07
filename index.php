@@ -1,4 +1,6 @@
 <?php
 
-    echo "Hola"
+    echo "Hola";
+
+    echo "2 commit";
 ?>
