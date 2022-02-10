@@ -17,6 +17,10 @@ switch($message) {
         $response = 'Hola! Soy BOT';
         sendMessage($chatId, $response);
         break;
+    case '/adios':
+        $response = 'Hasta luego';
+        sendMessage($chatId, $response);
+        break;
     default:
         $response = 'No te he entendido';
         sendMessage($chatId, $response);
