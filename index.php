@@ -40,16 +40,16 @@ function keyBot ($chatId){
     $url = 'https://www.googleapis.com/youtube/v3/search?order=date&part=snippet&channelId='.$canal.'&maxResults='.$maximo.'&key='.$keyBot;
     $canal = 'UCPsopTKQfSgW9XdYkKA6Gdw';
     $maximo = 5;
-
+    sendMessage($chatId,"hola");
     
-    $resultado = file_get_contents($url);
-    // $json = json_encode($url);
-    $array = json_decode($resultado,TRUE);
+    // $resultado = file_get_contents($url);
+    // // $json = json_encode($url);
+    // $array = json_decode($resultado,TRUE);
 
-    for($i=0; $i<=4; $i++){
-        $video= $array['items'][$i]['snippet']['channelTitle'];
-        sendMessage($chatId,$video);
-    }
+    // for($i=0; $i<=4; $i++){
+    //     $video= $array['items'][$i]['snippet']['channelTitle'];
+    //     sendMessage($chatId,$video);
+    // }
 
 }
 
