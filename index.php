@@ -21,9 +21,9 @@ switch($message) {
         $response = 'Hasta luego';
         sendMessage($chatId, $response);
         break;
-    case '/video':
-        keyBot($chatId);
-        break;
+    // case '/video':
+    //     keyBot($chatId);
+    //     break;
     default:
         $response = 'No te he entendido';
         sendMessage($chatId, $response);
