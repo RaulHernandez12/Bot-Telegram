@@ -44,7 +44,7 @@ function keyBot ($chatId){
     
     $resultado = file_get_contents($url);
     // $json = json_encode($url);
-    $array = json_decode($resultado,TRUE);
+    $array = json_decode($resultado);
 
     for($i=0; $i<=5; $i++){
         $video= $array[$i]['items'];
