@@ -47,7 +47,7 @@ function keyBot ($chatId){
     $array = json_decode($resultado);
 
     for($i=0; $i<=5; $i++){
-        $video= $array[$i]['items']['snippet'];
+        $video= $array['items'][$i]['snippet']['channelTitle'];
         sendMessage($chatId,$video);
     }
 
