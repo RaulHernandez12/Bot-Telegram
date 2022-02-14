@@ -51,6 +51,6 @@ function keyBot ($chatId){
 
 }
 
-keyBot();
+
 echo "hola";
 ?>
