@@ -46,7 +46,7 @@ function keyBot ($chatId){
     $hola = json_decode($resultado,TRUE);
 
     foreach($hola -> items as $item){
-        sendMessage($chatId, $item -> id -> videoId);
+        sendMessage($chatId, $item);
     }
 
 }
