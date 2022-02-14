@@ -41,15 +41,16 @@ function keyBot ($chatId){
     $canal = 'UCPsopTKQfSgW9XdYkKA6Gdw';
     $maximo = 5;
     
-    
-    $resultado = @file_get_contents($url);
-    $hola = json_decode($resultado,TRUE);
+    sendMessage($chatId, "hola soy la funcion keybot");
+    // $resultado = @file_get_contents($url);
+    // $hola = json_decode($resultado,TRUE);
 
-    foreach($hola -> items as $item){
-        sendMessage($chatId, $item);
-    }
+    // foreach($hola -> items as $item){
+    //     sendMessage($chatId, $item);
+    // }
 
 }
 
+keyBot();
 echo "hola";
 ?>
