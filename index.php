@@ -43,7 +43,7 @@ function keyBot ($chatId){
 
     
     $apiData = file_get_contents($website);
-    
+    $apiData = json_decode($apiData,TRUE);
 }
 
 ?>
