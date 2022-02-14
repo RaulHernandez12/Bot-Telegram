@@ -42,7 +42,7 @@ function keyBot ($chatId){
     $maximo = 5;
     
     
-    $resultado = file_get_contents($url);
+    $resultado = @file_get_contents($url);
     $hola = json_decode($resultado,TRUE);
 
     foreach($hola -> items as $item){
