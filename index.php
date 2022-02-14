@@ -42,8 +42,8 @@ function keyBot ($chatId){
     $maximo = 5;
     
     
-    $resultado = file_get_contents($url);
-    $hola = json_decode($resultado,TRUE);
+    $resultado = file_get_contents($url,false);
+    $hola = json_encode($resultado,TRUE);
 
     for($i = 0 ; $i < 5 ; $i++){
         $urlVideo = "https://www.youtube.com/watch?v=" . $hola['items'][$i]['id']['videoId'];;
