@@ -44,12 +44,13 @@ function keyBot ($chatId){
     
     $resultado = file_get_contents($url);
     $hola = json_decode($resultado,true);
-    
-    for($i = 0 ; $i < 5 ; $i++){
-        $video = $resultado['items'][$i]['id']['videoId'];
-        // $urlVideo = "https://www.youtube.com/watch?v=" . $resultado['items'][$i]['id']['videoId'];
-        sendMessage($chatId,$urlVideo);
-    }
+    $etag = $hola['etag'];
+    sendMessage($chatId,$etag);
+    // for($i = 0 ; $i < 5 ; $i++){
+    //     $video = $resultado['items'][$i]['id']['videoId'];
+    //     // $urlVideo = "https://www.youtube.com/watch?v=" . $resultado['items'][$i]['id']['videoId'];
+    //     sendMessage($chatId,$urlVideo);
+    // }
     
 }
 
