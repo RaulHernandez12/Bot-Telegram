@@ -14,13 +14,15 @@ switch($message) {
         sendMessage($chatId, $response);
         break;
     case '/info':
-        $response = 'Hola! Soy BOT';
+        $response = 'Hola! Soy un bot de telegram';
         sendMessage($chatId, $response);
         break;
     case '/adios':
         $response = 'Hasta luego';
         sendMessage($chatId, $response);
         break;
+    case '/video':
+        keyBot($chatId);
     default:
         $response = 'No te he entendido';
         sendMessage($chatId, $response);
@@ -31,4 +33,16 @@ function sendMessage($chatId, $response) {
     $url = $GLOBALS['website'].'/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&text='.urlencode($response);
     file_get_contents($url);
 }
+
+function keyBot ($chatId){
+    $keyBot = 'AIzaSyAvWKk9QNoGiBPj7vhFtTO6kN4ZnVppumc';
+    $website = 'https://www.googleapis.com/search?order=date&part=snippet&channelId='.$canal.'maxResults='.$maximo.'&key='.$token;
+    $canal = 'UCPsopTKQfSgW9XdYkKA6Gdw';
+    $maximo = 5;
+
+    
+    $apiData = @file_get_contents($website);
+    
+}
+
 ?>
