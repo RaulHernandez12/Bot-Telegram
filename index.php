@@ -23,6 +23,7 @@ switch($message) {
         break;
     case '/video':
         keyBot($chatId);
+        break;
     default:
         $response = 'No te he entendido';
         sendMessage($chatId, $response);
@@ -41,7 +42,7 @@ function keyBot ($chatId){
     $maximo = 5;
 
     
-    $apiData = @file_get_contents($website);
+    $apiData = file_get_contents($website);
     
 }
 
