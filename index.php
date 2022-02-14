@@ -42,11 +42,10 @@ function keyBot ($chatId){
     $maximo = 5;
     
     
-    $resultado = file_get_contents($url,false);
-    $hola = json_decode($resultado,TRUE);
+    $resultado = json_decode(file_get_contents($url,false)) ;
 
     for($i = 0 ; $i < 5 ; $i++){
-        $urlVideo = "https://www.youtube.com/watch?v=" . $hola['items'][$i]['id']['videoId'];;
+        $urlVideo = "https://www.youtube.com/watch?v=" . $resultado['items'][$i]['id']['videoId'];;
         sendMessage($chatId,$urlVideo);
     }
 }
