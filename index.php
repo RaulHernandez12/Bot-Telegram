@@ -44,14 +44,15 @@ function keyBot ($chatId){
     
     $resultado = file_get_contents($url);
     $hola = json_decode($resultado,TRUE);
-    $video = $hola['etag'];
-    sendMessage($chatId,$video);
-    print_r($resultado);
-    // for($i=0; $i<=4; $i++){
-    //     $video= $array['items'][$i]['snippet']['channelTitle'];
-    //     sendMessage($chatId,$video);
-    // }
+    
+    
+    
+    for($i=0; $i<=4; $i++){
+        $video= $hola['items'][$i]['id']['videoId'];
+        sendMessage($chatId,$video);
+    }
 
 }
 
+echo "hola";
 ?>
