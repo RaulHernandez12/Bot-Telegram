@@ -42,11 +42,12 @@ function keyBot ($chatId){
     $url = 'https://www.googleapis.com/youtube/v3/search?order=date&part=snippet&channel='.$canal.'&maxResults='.$maximo.'&key='.$keyBot;
     
     
-    $resultado = json_decode(file_get_contents($url,false)) ;
-    $video = $resultado['etag'][0];
+    $resultado = file_get_contents($url);
+    $hola = json_decode($resultado,true);
+    $video = $hola['etag'];
     sendMessage($chatId,$video);
     // for($i = 0 ; $i < 5 ; $i++){
-    //     $urlVideo = "https://www.youtube.com/watch?v=" . $resultado['items'][$i]['id']['videoId'];;
+    //     $urlVideo = "https://www.youtube.com/watch?v=" . $resultado['items'][$i]['id']['videoId'];
     //     sendMessage($chatId,$urlVideo);
     // }
     
