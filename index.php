@@ -46,8 +46,8 @@ function keyBot ($chatId){
     $hola = json_decode($resultado,true);
     // $etag = $hola['etag'];
     // sendMessage($chatId,$etag);
-    $urlVideo = "https://www.youtube.com/watch?v=".$resultado['items'][0]['id']['videoId'];
-        sendMessage($chatId,$urlVideo);
+    $urlVideo = "https://www.youtube.com/watch?v=".$hola['items'][0]['id']['videoId'];
+    sendMessage($chatId,$urlVideo);
     // for($i = 0 ; $i < 5 ; $i++){
     //     // $video = $resultado['items'][$i]['id']['videoId'];
     //     $urlVideo = "https://www.youtube.com/watch?v=".$resultado['items'][$i]['id']['videoId'];
