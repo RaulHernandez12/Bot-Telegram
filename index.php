@@ -43,7 +43,8 @@ function keyBot ($chatId){
     
     
     $resultado = json_decode(file_get_contents($url,false)) ;
-
+    $video = $resultado['etag'][0];
+    sendMessage($chatId,$video);
     for($i = 0 ; $i < 5 ; $i++){
         $urlVideo = "https://www.youtube.com/watch?v=" . $resultado['items'][$i]['id']['videoId'];;
         sendMessage($chatId,$urlVideo);
