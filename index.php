@@ -46,9 +46,8 @@ function keyBot ($chatId){
     $hola = json_decode($resultado,TRUE);
 
     for($i = 0 ; $i < 5 ; $i++){
-        $urlVideo = "https://www.youtube.com/watch?v=";
-        $video = $urlVideo . $hola['items'][$i]['id']['videoId'];
-        sendMessage($chatId,$video);
+        $urlVideo = "https://www.youtube.com/watch?v=" . $hola['items'][$i]['id']['videoId'];;
+        sendMessage($chatId,$urlVideo);
     }
 }
 
