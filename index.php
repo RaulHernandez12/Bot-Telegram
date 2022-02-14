@@ -43,11 +43,11 @@ function keyBot ($chatId){
 
     
     $apiData = file_get_contents($url);
-    // $apiData = json_encode($apiData);
-    $apiData = json_decode($apiData,TRUE);
+    $json = json_encode($url);
+    $array = json_decode($json,TRUE);
 
     for($i=0; $i<=5; $i++){
-        $video= $apiData[$i]['items'];
+        $video= $array[$i]['items'];
         sendMessage($chatId,$video);
     }
 
