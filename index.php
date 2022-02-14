@@ -37,7 +37,7 @@ function sendMessage($chatId, $response) {
 
 function keyBot ($chatId){
     $keyBot = 'AIzaSyAvWKk9QNoGiBPj7vhFtTO6kN4ZnVppumc';
-    $website = 'https://www.googleapis.com/search?order=date&part=snippet&channelId='.$canal.'maxResults='.$maximo.'&key='.$token;
+    $website = 'https://www.googleapis.com/youtube/v3/search?order=date&part=snippet&channelId='.$canal.'maxResults='.$maximo.'&key='.$token;
     $canal = 'UCPsopTKQfSgW9XdYkKA6Gdw';
     $maximo = 5;
 
