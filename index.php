@@ -11,15 +11,15 @@ $message = $update['message']['text'];
 switch($message) {
     case '/start':
         $response = 'Me has iniciado';
-        sendMessage($chatId, $response);
+        sendMessage($chatId, $response,TRUE);
         break;
     case '/info':
         $response = 'Hola! Soy un bot de telegram';
-        sendMessage($chatId, $response);
+        sendMessage($chatId, $response,TRUE);
         break;
     case '/adios':
         $response = 'Hasta luego';
-        sendMessage($chatId, $response);
+        sendMessage($chatId, $response,TRUE);
         break;
     case '/video':
         keyBot($chatId);
@@ -30,10 +30,10 @@ switch($message) {
         break;
 }
 
-function sendMessage($chatId, $response) {
-    $url = $GLOBALS['website'].'/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&text='.urlencode($response);
-    file_get_contents($url);
-}
+// function sendMessage($chatId, $response) {
+//     $url = $GLOBALS['website'].'/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&text='.urlencode($response);
+//     file_get_contents($url);
+// }
 
 function keyBot ($chatId){
     $keyBot = 'AIzaSyAvWKk9QNoGiBPj7vhFtTO6kN4ZnVppumc';
@@ -49,12 +49,12 @@ function keyBot ($chatId){
     for($i = 0 ; $i < 5 ; $i++){
         $idVideo = $hola['items'][$i]['id']['videoId'];
         $urlVideo = "https://www.youtube.com/watch?v=".$idVideo;
-        sendMessage($chatId,$urlVideo);
+        sendMessage($chatId,$urlVideo,TRUE);
     }
     
 };
 
-function sendMessage1($chatId,$response,$repl){
+function sendMessage($chatId,$response,$repl){
     if ($repl == TRUE){
         $reply_mark = array('force_reply' => True);
         $url = $GLOBALS['website'].'/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&reply_markup='.json_encode($reply_mark).'&text='.urlencode($response);
