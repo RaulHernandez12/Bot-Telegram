@@ -37,17 +37,15 @@ function sendMessage($chatId, $response) {
 
 function keyBot ($chatId){
     $keyBot = 'AIzaSyAvWKk9QNoGiBPj7vhFtTO6kN4ZnVppumc';
-    $canal = 'AuronPlay';
+    $canal = 'UCyQqzYXQBUWgBTn4pw_fFSQ';
     $maximo = 5;
-    $url = 'https://www.googleapis.com/youtube/v3/search?order=date&part=snippet&c='.$canal.'&maxResults='.$maximo.'&key='.$keyBot;
+    $url = 'https://www.googleapis.com/youtube/v3/search?order=date&part=snippet&channel='.$canal.'&maxResults='.$maximo.'&key='.$keyBot;
     
     
     $resultado = file_get_contents($url);
     $hola = json_decode($resultado,true);
     
-    // $idVideo = $hola['items'][0]['id']['videoId'];
-    // $urlVideo = "https://www.youtube.com/watch?v=".$idVideo;
-    // sendMessage($chatId,$urlVideo);
+   
     for($i = 0 ; $i < 5 ; $i++){
         $idVideo = $hola['items'][$i]['id']['videoId'];
         $urlVideo = "https://www.youtube.com/watch?v=".$idVideo;
