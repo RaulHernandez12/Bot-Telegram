@@ -11,22 +11,22 @@ $message = $update['message']['text'];
 switch($message) {
     case '/start':
         $response = 'Me has iniciado';
-        sendMessage($chatId, $response);
+        sendMessage($chatId, $response,FALSE);
         break;
     case '/info':
         $response = 'Hola! Soy un bot de telegram';
-        sendMessage($chatId, $response);
+        sendMessage($chatId, $response,FALSE);
         break;
     case '/adios':
         $response = 'Hasta luego';
-        sendMessage($chatId, $response);
+        sendMessage($chatId, $response,FALSE);
         break;
     case '/video':
         keyBot($chatId);
         break;
     default:
         $response = 'No te he entendido';
-        sendMessage($chatId, $response);
+        sendMessage($chatId, $response,FALSE);
         break;
 }
 
