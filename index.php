@@ -47,7 +47,7 @@ function keyBot ($chatId){
     $url.='&max_results='.$maximo;
     $url.='&region='.$region;
     
-    $resultado = file_get_contents($url_youtube);
+    $resultado = file_get_contents($url);
     $hola = json_decode($resultado,true);
     
    
