@@ -37,7 +37,7 @@ switch($message) {
 
 function keyBot ($chatId){
     $keyBot = 'AIzaSyAvWKk9QNoGiBPj7vhFtTO6kN4ZnVppumc';
-    $canal = 'UCGrGpbYkr9fre1sMhHiLCPQ';
+    $canal = 'UCyQqzYXQBUWgBTn4pw_fFSQ';
     $region = 'ES';
     $part = 'id,snippet';
     $order = 'relevance';
@@ -52,6 +52,7 @@ function keyBot ($chatId){
     $url.='&q='.$busqueda;
     $url.='&regionCode='.$region;
     $url.='&type='.$tipo;
+    $url.='&channelID='.$canal;
     
     
     $resultado = file_get_contents($url);
