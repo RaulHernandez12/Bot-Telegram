@@ -38,9 +38,9 @@ switch($message) {
 function keyBot ($chatId){
     $keyBot = 'AIzaSyAvWKk9QNoGiBPj7vhFtTO6kN4ZnVppumc';
     $canal = 'UCyQqzYXQBUWgBTn4pw_fFSQ';
-    $maximo = 5;
+    $maximo = '5';
     $region = 'ES';
-    $url_youtube = 'https://www.googleapis.com/youtube/v3/search?key=AIzaSyAvWKk9QNoGiBPj7vhFtTO6kN4ZnVppumc&channelId=UCyQqzYXQBUWgBTn4pw_fFSQ&max_results=5&region=ES';
+    $url_youtube = 'https://www.googleapis.com/youtube/v3/search;
     $url = $url_youtube;
     $url.='?key='.$keyBot;
     $url.='&channelID='.$canal;
