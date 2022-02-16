@@ -38,21 +38,12 @@ switch($message) {
 function keyBot ($chatId){
     $keyBot = 'AIzaSyAvWKk9QNoGiBPj7vhFtTO6kN4ZnVppumc';
     $canal = 'UCyQqzYXQBUWgBTn4pw_fFSQ';
-    $region = 'ES';
-    $part = 'id,snippet';
-    $order = 'relevance';
-    $busqueda= 'auronplay';
-    $tipo = 'channel';
     $maximo = 5;
     $url_youtube = 'https://www.googleapis.com/youtube/v3/search';
     $url = $url_youtube;
     $url.='?key='.$keyBot;
-    $url.='&part='.$part;
-    $url.='&order='.$order;
-    $url.='&q='.$busqueda;
-    $url.='&regionCode='.$region;
-    $url.='&type='.$tipo;
     $url.='&channelID='.$canal;
+    $url.='&max_results='.$maximo;
     
     
     $resultado = file_get_contents($url);
