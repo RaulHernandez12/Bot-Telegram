@@ -40,7 +40,7 @@ function keyBot ($chatId){
     $canal = 'UCyQqzYXQBUWgBTn4pw_fFSQ';
     $maximo = '5';
     $region = 'ES';
-    $url_youtube = 'https://www.googleapis.com/youtube/v3/search;
+    $url_youtube = 'https://www.googleapis.com/youtube/v3/search';
     $url = $url_youtube;
     $url.='?key='.$keyBot;
     $url.='&channelID='.$canal;
