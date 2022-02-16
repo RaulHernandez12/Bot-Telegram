@@ -37,9 +37,9 @@ switch($message) {
 
 function keyBot ($chatId){
     $keyBot = 'AIzaSyAvWKk9QNoGiBPj7vhFtTO6kN4ZnVppumc';
-    $canal = 'AuronPlay';
+    $canal = 'UCGrGpbYkr9fre1sMhHiLCPQ';
     $maximo = 5;
-    $url = 'https://www.googleapis.com/youtube/v3/search?order=date&part=snippet&c='.$canal.'&maxResults='.$maximo.'&key='.$keyBot;
+    $url = 'https://www.googleapis.com/youtube/v3/search?order=date&part=snippet&channelId='.$canal.'&maxResults='.$maximo.'&key='.$keyBot;
     
     
     $resultado = file_get_contents($url);
