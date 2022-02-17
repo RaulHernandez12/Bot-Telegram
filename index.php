@@ -24,6 +24,10 @@ switch($message) {
     case '/video':
         keyBot($chatId);
         break;
+    case '/canal':
+        $response = 'Que canal quieres ver?';
+        sendMessage($chatId, $response,TRUE);
+        break;
     default:
         $response = 'No te he entendido';
         sendMessage($chatId, $response,FALSE);
