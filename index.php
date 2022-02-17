@@ -7,7 +7,8 @@ $update = json_decode($input, TRUE);
 
 $chatId = $update['message']['chat']['id'];
 $message = $update['message']['text'];
-
+$reply = $update['message']['text'];
+$reply == False;
 if($repl == FALSE){
     switch($message) {
         case '/start':
