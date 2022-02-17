@@ -42,7 +42,7 @@ if(empty($reply)){
 }
 
 function keyBot ($chatId,$response){
-    if($response == "auron"){
+    if($response == "AuronPlay"){
     $keyBot = 'AIzaSyAvWKk9QNoGiBPj7vhFtTO6kN4ZnVppumc';
     $response = 'UCyQqzYXQBUWgBTn4pw_fFSQ';
     $maximo = '5';
