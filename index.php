@@ -68,8 +68,8 @@ function keyBot ($chatId,$response){
                 $urlVideo = "https://www.youtube.com/watch?v=".$idVideo;
                 sendMessage($chatId,$urlVideo,FALSE);
             }
-    
-};
+        }
+    };
 
 function sendMessage($chatId,$response,$repl){
     if ($repl == TRUE){
