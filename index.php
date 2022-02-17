@@ -15,7 +15,7 @@ switch($message) {
         break;
     case '/info':
         $response = 'Hola! Soy un bot de telegram';
-        sendMessage($chatId, $response,FALSE);
+        sendMessage($chatId, $response,TRUE);
         break;
     case '/adios':
         $response = 'Hasta luego';
@@ -54,7 +54,7 @@ function keyBot ($chatId){
     for($i = 0 ; $i < 5 ; $i++){
         $idVideo = $hola['items'][$i]['id']['videoId'];
         $urlVideo = "https://www.youtube.com/watch?v=".$idVideo;
-        sendMessage($chatId,$urlVideo,TRUE);
+        sendMessage($chatId,$urlVideo,FALSE);
     }
     
 };
