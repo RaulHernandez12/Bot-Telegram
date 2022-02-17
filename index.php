@@ -11,36 +11,36 @@ $message = $update['message']['text'];
 switch($message) {
     case '/start':
         $response = 'Me has iniciado';
-        sendMessage($chatId, $respuesta,FALSE);
+        sendMessage($chatId, $response,FALSE);
         break;
     case '/info':
         $response = 'Hola! Soy un bot de telegram';
-        sendMessage($chatId, $respuesta,TRUE);
+        sendMessage($chatId, $response,TRUE);
         break;
     case '/adios':
         $response = 'Hasta luego';
-        sendMessage($chatId, $respuesta,FALSE);
+        sendMessage($chatId, $response,FALSE);
         break;
     case '/video':
-        keyBot($chatId);
+        keyBot($chatId,$response);
         break;
     case '/canal':
         $response = 'Que canal quieres ver?';
-        sendMessage($chatId, $respuesta,TRUE);
+        sendMessage($chatId, $response,TRUE);
         break;
     default:
         $response = 'No te he entendido';
-        sendMessage($chatId, $respuesta,FALSE);
+        sendMessage($chatId, $response,FALSE);
         break;
 }
 
 
-function keyBot ($chatId){
+function keyBot ($chatId,$response){
     $keyBot = 'AIzaSyAvWKk9QNoGiBPj7vhFtTO6kN4ZnVppumc';
     $canal = 'UCyQqzYXQBUWgBTn4pw_fFSQ';
     $maximo = '5';
     $region = 'ES';
-    $url = 'https://www.googleapis.com/youtube/v3/search?key=AIzaSyAvWKk9QNoGiBPj7vhFtTO6kN4ZnVppumc&channelId='.$canal.'&max_results='.$maximo.'&region='.$region;
+    $url = 'https://www.googleapis.com/youtube/v3/search?key=AIzaSyAvWKk9QNoGiBPj7vhFtTO6kN4ZnVppumc&channelId='.$response.'&max_results='.$maximo.'&region='.$region;
     
     
     $resultado = file_get_contents($url);
