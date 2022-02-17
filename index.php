@@ -38,7 +38,7 @@ if(empty($reply)){
 }else {
     switch($video){
         case 'auron':
-            keyBot($chatId);
+            keyBot($chatId,1);
             break;
     }
 }
