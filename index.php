@@ -40,9 +40,7 @@ function keyBot ($chatId){
     $canal = 'UCyQqzYXQBUWgBTn4pw_fFSQ';
     $maximo = '5';
     $region = 'ES';
-    $url = 'https://www.googleapis.com/youtube/v3/search?key=AIzaSyAvWKk9QNoGiBPj7vhFtTO6kN4ZnVppumc&channelId='.$canal.'&max_results='.$maximo.'&region='.$region;
-    
-    
+    $url = 'https://www.googleapis.com/youtube/v3/search?key=AIzaSyAvWKk9QNoGiBPj7vhFtTO6kN4ZnVppumc&channelId='.$canal.'&max_results='.$maximo;
     $resultado = file_get_contents($url);
     $hola = json_decode($resultado,true);
     
