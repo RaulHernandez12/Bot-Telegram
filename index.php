@@ -9,7 +9,7 @@ $chatId = $update['message']['chat']['id'];
 $message = $update['message']['text'];
 $reply = $update['message']['text'];
 $reply == False;
-if($repl == FALSE){
+if($reply == FALSE){
     switch($message) {
         case '/start':
             $response = 'Me has iniciado';
