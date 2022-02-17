@@ -38,6 +38,7 @@ if($repl == FALSE){
     switch($video){
         case 'auron':
             keyBot($chatId);
+            break;
     }
 }
 
@@ -48,8 +49,6 @@ function keyBot ($chatId){
     $maximo = '5';
     $region = 'ES';
     $url = 'https://www.googleapis.com/youtube/v3/search?key=AIzaSyAvWKk9QNoGiBPj7vhFtTO6kN4ZnVppumc&channelId='.$canal.'&max_results='.$maximo.'&region='.$region;
-    
-    
     $resultado = file_get_contents($url);
     $hola = json_decode($resultado,true);
     
