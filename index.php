@@ -27,7 +27,7 @@ if(empty($reply)){
         //     keyBot($chatId);
         //     break;
         case '/canal':
-            $response = 'Que canal quieres ver?';
+            $response = 'Que canal quieres ver? AuronPlay, ElRubius';
             sendMessage($chatId, $response,TRUE);
             break;
         default:
