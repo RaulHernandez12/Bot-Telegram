@@ -11,26 +11,26 @@ $message = $update['message']['text'];
 switch($message) {
     case '/start':
         $response = 'Me has iniciado';
-        sendMessage($chatId, $response,FALSE);
+        sendMessage($chatId, $respuesta,FALSE);
         break;
     case '/info':
         $response = 'Hola! Soy un bot de telegram';
-        sendMessage($chatId, $response,TRUE);
+        sendMessage($chatId, $respuesta,TRUE);
         break;
     case '/adios':
         $response = 'Hasta luego';
-        sendMessage($chatId, $response,FALSE);
+        sendMessage($chatId, $respuesta,FALSE);
         break;
     case '/video':
         keyBot($chatId);
         break;
     case '/canal':
         $response = 'Que canal quieres ver?';
-        sendMessage($chatId, $response,TRUE);
+        sendMessage($chatId, $respuesta,TRUE);
         break;
     default:
         $response = 'No te he entendido';
-        sendMessage($chatId, $response,FALSE);
+        sendMessage($chatId, $respuesta,FALSE);
         break;
 }
 
@@ -41,6 +41,8 @@ function keyBot ($chatId){
     $maximo = '5';
     $region = 'ES';
     $url = 'https://www.googleapis.com/youtube/v3/search?key=AIzaSyAvWKk9QNoGiBPj7vhFtTO6kN4ZnVppumc&channelId='.$canal.'&max_results='.$maximo.'&region='.$region;
+    
+    
     $resultado = file_get_contents($url);
     $hola = json_decode($resultado,true);
     
@@ -53,7 +55,7 @@ function keyBot ($chatId){
     
 };
 
-function sendMessage($chatId,$response,$repl){
+function sendMessage($chatId,$respuesta,$repl){
     if ($repl == TRUE){
         $reply_mark = array('force_reply' => True);
         $url = $GLOBALS['website'].'/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&reply_markup='.json_encode($reply_mark).'&text='.urlencode($response);
