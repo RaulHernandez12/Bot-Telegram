@@ -36,11 +36,11 @@ if(empty($reply)){
             break;
     }
 }else {
-    switch($message){
-        case 'auron':
+    
+        
             keyBot($chatId,$message);
-            break;
-    }
+            
+    
 }
 
 
