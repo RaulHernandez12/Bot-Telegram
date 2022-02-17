@@ -21,12 +21,13 @@ switch($message) {
         $response = 'Hasta luego';
         sendMessage($chatId, $response,FALSE);
         break;
-    case '/video':
-        keyBot($chatId,$response);
-        break;
+    // case '/video':
+    //     keyBot($chatId,$response);
+    //     break;
     case '/canal':
         $response = 'Que canal quieres ver?';
         sendMessage($chatId, $response,TRUE);
+        keyBot($chatId,$response);
         break;
     default:
         $response = 'No te he entendido';
