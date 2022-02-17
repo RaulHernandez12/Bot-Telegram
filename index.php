@@ -36,30 +36,29 @@ if(empty($reply)){
             break;
     }
 }else {
-    
-        
+       
             keyBot($chatId,$message);
-            
-    
+             
 }
 
 
 function keyBot ($chatId,$response){
+    if($response == "auron"){
     $keyBot = 'AIzaSyAvWKk9QNoGiBPj7vhFtTO6kN4ZnVppumc';
-    $canal = 'UCyQqzYXQBUWgBTn4pw_fFSQ';
+    $response = 'UCyQqzYXQBUWgBTn4pw_fFSQ';
     $maximo = '5';
     $region = 'ES';
-    $url = 'https://www.googleapis.com/youtube/v3/search?key=AIzaSyAvWKk9QNoGiBPj7vhFtTO6kN4ZnVppumc&c='.$response.'&max_results='.$maximo.'&region='.$region;
+    $url = 'https://www.googleapis.com/youtube/v3/search?key=AIzaSyAvWKk9QNoGiBPj7vhFtTO6kN4ZnVppumc&channelId='.$response.'&max_results='.$maximo.'&region='.$region;
     $resultado = file_get_contents($url);
     $hola = json_decode($resultado,true);
     
    
-    for($i = 0 ; $i < 5 ; $i++){
-        $idVideo = $hola['items'][$i]['id']['videoId'];
-        $urlVideo = "https://www.youtube.com/watch?v=".$idVideo;
-        sendMessage($chatId,$urlVideo,FALSE);
+        for($i = 0 ; $i < 5 ; $i++){
+            $idVideo = $hola['items'][$i]['id']['videoId'];
+            $urlVideo = "https://www.youtube.com/watch?v=".$idVideo;
+            sendMessage($chatId,$urlVideo,FALSE);
+        }
     }
-    
 };
 
 function sendMessage($chatId,$response,$repl){
