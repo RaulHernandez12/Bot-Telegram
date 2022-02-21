@@ -23,9 +23,19 @@ if(empty($reply)){
             $response = 'Hasta luego';
             sendMessage($chatId, $response,FALSE);
             break;
-        // case '/video':
-        //     keyBot($chatId);
-        //     break;
+        case '/video':
+            $keyboard = array('keyboard' =>
+            array(array(
+                array('text'=>'/start','callback_data'=>"1"),
+                array('text'=>'/info ','callback_data'=>"2"),
+                array('text'=>'/adios','callback_data'=>"3")
+        ),
+            array(
+                array('text'=>'/canal ','callback_data'=>"4")
+            )), 'one_time_keyboard' => false, 'resize_keyboard' => true
+    );
+    file_get_contents('https://api.telegram.org/bot5233641563:AAHUv-Dn4QuqUIJAp6nCK4nFx_ZsFgIowps/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&reply_markup='.json_encode($keyboard).'&text=Cargando...');
+            break;
         case '/canal':
             $response = 'Que canal quieres ver? AuronPlay, ElRubius';
             sendMessage($chatId, $response,TRUE);
@@ -55,6 +65,7 @@ function keyBot ($chatId,$response){
             $urlVideo = "https://www.youtube.com/watch?v=".$idVideo;
             sendMessage($chatId,$urlVideo,FALSE);
         }
+        
     }elseif($response == "ElRubius"){
 
         $keyBot = 'AIzaSyAvWKk9QNoGiBPj7vhFtTO6kN4ZnVppumc';
