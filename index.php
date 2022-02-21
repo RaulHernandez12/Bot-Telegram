@@ -57,7 +57,7 @@ function keyBot ($chatId,$response){
     $response = 'UCyQqzYXQBUWgBTn4pw_fFSQ';
     $maximo = '5';
     $region = 'ES';
-    $order = 'relevance';
+    $order = 'date';
     $url = 'https://www.googleapis.com/youtube/v3/search?key=AIzaSyAvWKk9QNoGiBPj7vhFtTO6kN4ZnVppumc&channelId='.$response.'&max_results='.$maximo.'&region='.$region.'&order='.$order;
     $resultado = file_get_contents($url);
     $hola = json_decode($resultado,true);
