@@ -23,7 +23,7 @@ if(empty($reply)){
             $response = 'Hasta luego';
             sendMessage($chatId, $response,FALSE);
             break;
-        case '/video':
+        case '/teclado':
             $keyboard = array('keyboard' =>
             array(array(
                 array('text'=>'/start','callback_data'=>"1"),
