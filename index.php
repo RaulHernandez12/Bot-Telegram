@@ -23,8 +23,9 @@ function teclado(){
     file_get_contents('https://api.telegram.org/bot5233641563:AAHUv-Dn4QuqUIJAp6nCK4nFx_ZsFgIowps/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&reply_markup='.json_encode($keyboard).'&text=Cargando...');
 }
 
-teclado();
+
 if(empty($reply)){
+    teclado();
     switch($message) {
         case '/start':
             $response = 'Me has iniciado';
@@ -49,8 +50,8 @@ if(empty($reply)){
             break;
     }
 }else {
-       
-            keyBot($chatId,$message);
+        teclado();
+        keyBot($chatId,$message);
              
 }
 
