@@ -14,16 +14,6 @@ if(empty($reply)){
         case '/start':
             $response = 'Me has iniciado';
             sendMessage($chatId, $response,FALSE);
-            break;
-        case '/info':
-            $response = 'Hola! Soy un bot de telegram';
-            sendMessage($chatId, $response,FALSE);
-            break;
-        case '/adios':
-            $response = 'Hasta luego';
-            sendMessage($chatId, $response,FALSE);
-            break;
-        case '/teclado':
             $keyboard = array('keyboard' =>
             array(array(
                 array('text'=>'/start','callback_data'=>"1"),
@@ -35,6 +25,18 @@ if(empty($reply)){
             )), 'one_time_keyboard' => false, 'resize_keyboard' => true
     );
     file_get_contents('https://api.telegram.org/bot5233641563:AAHUv-Dn4QuqUIJAp6nCK4nFx_ZsFgIowps/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&reply_markup='.json_encode($keyboard).'&text=Cargando...');
+            break;
+        case '/info':
+            $response = 'Hola! Soy un bot de telegram';
+            sendMessage($chatId, $response,FALSE);
+            break;
+        case '/adios':
+            $response = 'Hasta luego';
+            sendMessage($chatId, $response,FALSE);
+            break;
+        case '/teclado':
+            
+    
             break;
         case '/canal':
             $response = 'Que canal quieres ver? AuronPlay, ElRubius';
