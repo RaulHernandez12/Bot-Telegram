@@ -9,7 +9,7 @@ $chatId = $update['message']['chat']['id'];
 $message = $update['message']['text'];
 $reply = $update['message']['reply_to_message']['text'];
 
-function teclado(){
+function teclado($chatId){
     $keyboard = array('keyboard' =>
             array(array(
                 array('text'=>'/start','callback_data'=>"1"),
@@ -25,7 +25,7 @@ function teclado(){
 
 
 if(empty($reply)){
-    teclado();
+    teclado($chatId);
     switch($message) {
         case '/start':
             $response = 'Me has iniciado';
@@ -50,7 +50,7 @@ if(empty($reply)){
             break;
     }
 }else {
-        teclado();
+        teclado($chatId);
         keyBot($chatId,$message);
              
 }
